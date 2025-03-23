@@ -1,0 +1,55 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@types/node':
+        specifier: ^22.13.11
+        version: 22.13.11
+      koffi:
+        specifier: ^2.10.1
+        version: 2.10.1
+      win32-def:
+        specifier: ^26.1.2
+        version: 26.1.2
+
+packages:
+
+  '@types/node@22.13.11':
+    resolution: {integrity: sha512-iEUCUJoU0i3VnrCmgoWCXttklWcvoCIx4jzcP22fioIVSdTmjgoEvmAO/QPw6TcS9k5FrNgn4w7q5lGOd1CT5g==}
+
+  '@waiting/shared-types@23.24.0':
+    resolution: {integrity: sha512-E7U3ulMbHiT05Jd8RlepovGeixCQMAdJMkGE83s/JMtCOx0n02Ss7OURLVgV+j06SeHZ52wCBoHfriqlW6Pa3w==}
+    engines: {node: '>=18.12.0'}
+
+  koffi@2.10.1:
+    resolution: {integrity: sha512-MjsM1/Xi/p4bjl8hThZ35QpuuWu4MurSDBu+diepnqGMNlUOx/m/hisaw25kr7y4g2GG24TLEOCQgHK3BZvfPg==}
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+
+  win32-def@26.1.2:
+    resolution: {integrity: sha512-vk65D1jZt6t0cTpP8fdUPbHobneOKPyYpk8ADIjUTq4aDkfNiHtbIAPqz/bqYABFZqRU7NCREqf5v7EOz3lstg==}
+    engines: {node: '>=18.11.0'}
+
+snapshots:
+
+  '@types/node@22.13.11':
+    dependencies:
+      undici-types: 6.20.0
+
+  '@waiting/shared-types@23.24.0': {}
+
+  koffi@2.10.1: {}
+
+  undici-types@6.20.0: {}
+
+  win32-def@26.1.2:
+    dependencies:
+      '@waiting/shared-types': 23.24.0
+      koffi: 2.10.1
