@@ -31,4 +31,4 @@
 5. 内存读写
 6. `_Inout_`​ 类型的使用
 
-<video src=".\README\屏幕录制 2025-03-23 171741.mp4"></video>
+视频 https://github.com/996581176/koffi-example/tree/main/README
