@@ -28,6 +28,9 @@ const FIXED_INFO = koffi.struct("FIXED_INFO", {
 
 // win32-def 加载方式
 const aa = load<{
+  /**检索本地计算机的网络参数
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/iphlpapi/nf-iphlpapi-getnetworkparams
+   */
   GetNetworkParams: (pFixedInfo: Buffer<ArrayBuffer>, pOutBufLen: number[]) => number; // 定义要使用的函数类型
 }>({
   dll: "iphlpapi.dll", // 使用的dll库

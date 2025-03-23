@@ -36,13 +36,17 @@ koffi.struct("PROCESSENTRY32", {
 koffi.alias("LPPROCESSENTRY32", "PROCESSENTRY32 *");
 
 const lib = load<{
-  /** 打开进程获取句柄 */
+  /**打开进程获取句柄
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess
+   */
   OpenProcess: (
     dwDesiredAccess: DWORD,
     bInheritHandle: BOOLEAN,
     dwProcessId: DWORD
   ) => HANDLE | null;
-  /** 读内存 */
+  /**读内存
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/memoryapi/nf-memoryapi-readprocessmemory
+   */
   ReadProcessMemory: (
     hProcess: HANDLE,
     lpBaseAddress: LPCVOID,
@@ -50,7 +54,9 @@ const lib = load<{
     nSize: SIZE_T,
     lpNumberOfBytesWritten: SIZE_T | null
   ) => BOOLEAN;
-  /** 写内存 */
+  /**写内存
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/memoryapi/nf-memoryapi-writeprocessmemory
+   */
   WriteProcessMemory: (
     hProcess: HANDLE,
     lpBaseAddress: LPVOID,
@@ -58,7 +64,13 @@ const lib = load<{
     nSize: SIZE_T,
     lpNumberOfBytesWritten: PSIZE_T | null
   ) => BOOLEAN;
-  /** 获取模块地址 */
+  /**获取模块地址
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/psapi/nf-psapi-enumprocessmodulesex
+   *
+   * 如果 PSAPI_VERSION 为 2 或更大，则此函数在 Psapi.h 中定义为 K32EnumProcessModulesEx ，并在 Kernel32.lib 和 Kernel32.dll 中导出。 
+   * 
+   * 如果 PSAPI_VERSION 为 1，则此函数在 Psapi.h 中定义为 EnumProcessModulesEx ，并在 Psapi.lib 中导出，Psapi.dll 为调用 K32EnumProcessModulesEx 的包装器。
+   */
   K32EnumProcessModulesEx: (
     hProcess: HANDLE,
     lphModule: _POINTER,
@@ -66,9 +78,17 @@ const lib = load<{
     lpcbNeeded: LPDWORD,
     dwFilterFlag: DWORD
   ) => BOOLEAN;
-  /** 获取指定进程以及这些进程使用的堆、模块和线程的快照 */
+  /**获取指定进程以及这些进程使用的堆、模块和线程的快照
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/tlhelp32/nf-tlhelp32-createtoolhelp32snapshot
+   */
   CreateToolhelp32Snapshot: (dwFlags: DWORD, th32ProcessID: DWORD) => HANDLE;
+  /**检索有关系统快照中遇到的第一个进程的信息
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/tlhelp32/nf-tlhelp32-process32first
+   */
   Process32First: (hSnapshot: HANDLE, lppe: object) => BOOLEAN;
+  /**检索有关系统快照中记录的下一个进程的信息
+   * @see https://learn.microsoft.com/zh-cn/windows/win32/api/tlhelp32/nf-tlhelp32-process32next
+   */
   Process32Next: (hSnapshot: HANDLE, lppe: object) => BOOLEAN;
 }>({
   dll: "Kernel32.dll",
