@@ -1,5 +1,7 @@
 `koffi`​ 、`win32-def`​库的使用例子
 
+[windows下各种类型别名参考文档](https://learn.microsoft.com/zh-cn/windows/win32/winprog/windows-data-types)
+
 #### `GetNetworkParams.ts`​：获取当前设备网络配置(入门版)
 
 ##### 两种加载方式
