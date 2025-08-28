@@ -13,6 +13,8 @@ import {
 } from "win32-def";
 import koffi from "koffi";
 
+// 不透明类型使用 koffi.opaque() 创建
+// 不透明指针（void *）类型使用 koffi.pointer("HANDLE", koffi.opaque()) 创建
 const HANDLE = koffi.pointer("HANDLE", koffi.opaque());
 koffi.alias("LPVOID", HANDLE);
 koffi.alias("LPCVOID", HANDLE);
