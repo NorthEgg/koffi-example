@@ -1,7 +1,5 @@
 `koffi`​ 、`win32-def`​库的使用例子
 
-[windows下各种类型别名参考文档](https://learn.microsoft.com/zh-cn/windows/win32/winprog/windows-data-types)
-
 #### `GetNetworkParams.ts`​：获取当前设备网络配置(入门版)
 
 ##### 两种加载方式
@@ -34,3 +32,8 @@
 6. `_Inout_`​ 类型的使用
 
 视频 https://github.com/996581176/koffi-example/tree/main/README
+
+#### 相关文档
+- [Windows Api documentation](https://msdn.microsoft.com/en-us/library/windows/desktop/ff468919%28v=vs.85%29.aspx)
+- [Windows Data Types](https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751#DWORD)
+- [System Error Codes](https://msdn.microsoft.com/en-us/library/windows/desktop/ms681381%28v=vs.85%29.aspx)

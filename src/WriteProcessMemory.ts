@@ -69,8 +69,8 @@ const lib = load<{
   /**获取模块地址
    * @see https://learn.microsoft.com/zh-cn/windows/win32/api/psapi/nf-psapi-enumprocessmodulesex
    *
-   * 如果 PSAPI_VERSION 为 2 或更大，则此函数在 Psapi.h 中定义为 K32EnumProcessModulesEx ，并在 Kernel32.lib 和 Kernel32.dll 中导出。 
-   * 
+   * 如果 PSAPI_VERSION 为 2 或更大，则此函数在 Psapi.h 中定义为 K32EnumProcessModulesEx ，并在 Kernel32.lib 和 Kernel32.dll 中导出。
+   *
    * 如果 PSAPI_VERSION 为 1，则此函数在 Psapi.h 中定义为 EnumProcessModulesEx ，并在 Psapi.lib 中导出，Psapi.dll 为调用 K32EnumProcessModulesEx 的包装器。
    */
   K32EnumProcessModulesEx: (
@@ -115,8 +115,18 @@ const lib = load<{
     "Process32First",
     "Process32Next",
   ],
+  // 是否自动创建结构体（没有内置结构体就不会成功，因此直接自己创建）
   autoCreateStruct: false,
+  // 调用约定
   convention: CallingConvention.Stdcall,
+  // 指定系统位数，不填写默认是 false 即当前系统位数
+  // _WIN64,
+  // 判断是否强制注册。若不强制，则尝试从缓存（LoaderCache）中获取已注册的函数映射。
+  // forceRegister,
+  /**处理Windows API调用中参数多态的映射器。需要自己实现实参与形参的匹配，然后作为参数传递给 multipleChoiceMapperList。
+   * 例子见 src/multipleChoiceMapperListExample.ts
+   */
+  // multipleChoiceMapperList,
 });
 
 // -------------------------------------------根据进程名查找进程PID--------------------------------------------
