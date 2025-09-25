@@ -10,10 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.17.1",
   "dependencies": {
-    "@types/node": "^22.13.11",
-    "koffi": "^2.10.1",
+    "@types/node": "^24.5.2",
+    "koffi": "^2.14.1",
     "win32-def": "^26.1.2"
   },
   "pnpm": {
