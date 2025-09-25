@@ -8,7 +8,7 @@ koffi.alias("DWORD", "uint32_t");
 // 定义结构体
 koffi.struct("IP_ADDR_STRING", {
   Next: "IP_ADDR_STRING *",
-  // 创建指定长度char
+  // 创建指定长度char。其中 hint 参数是用来在将 C 中的值转到 JS 时指定转换后的数据形式，详见 https://koffi.dev/input#array-types
   IpAddress: koffi.array("char", 16, "String"),
   IpMask: koffi.array("char", 16, "String"),
   // 基本类型中没有 DWORD ,只有创建完类型别名后才能使用 DWORD 类型

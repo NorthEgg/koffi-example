@@ -35,5 +35,5 @@
 
 #### 相关文档
 - [Windows Api documentation](https://msdn.microsoft.com/en-us/library/windows/desktop/ff468919%28v=vs.85%29.aspx)
-- [Windows Data Types](https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751#DWORD)
+- [Windows Data Types](https://learn.microsoft.com/zh-cn/windows/win32/winprog/windows-data-types)
 - [System Error Codes](https://msdn.microsoft.com/en-us/library/windows/desktop/ms681381%28v=vs.85%29.aspx)
